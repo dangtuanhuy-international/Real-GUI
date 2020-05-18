@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterExtensions } from "nativescript-angular/router";
 @Component({
   selector: 'ns-demo-today',
   templateUrl: './demo-today.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoTodayComponent implements OnInit {
 
-  constructor() { }
+  constructor
+    (private routerExtensions: RouterExtensions) { }
 
   ngOnInit(): void {
   }
-
+  goBack() {
+    this.routerExtensions.backToPreviousPage();
+  }
 }
