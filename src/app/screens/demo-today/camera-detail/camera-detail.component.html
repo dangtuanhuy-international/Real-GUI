@@ -1,0 +1,14 @@
+<ActionBar title="Details Camera"></ActionBar>
+
+<FlexboxLayout flexDirection="column">
+
+    <BarcodeScanner
+        height="300"
+        formats="QR_CODE, EAN_13, UPC_A"
+        beepOnScan="true"
+        reportDuplicates="true"
+        preferFrontCamera="false"
+        [pause]="pause"
+        (scanResult)="onScanResult($event)">
+    </BarcodeScanner>
+</FlexboxLayout>
