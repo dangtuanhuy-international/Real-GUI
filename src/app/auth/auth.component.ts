@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as log from 'loglevel';
 import { RouterExtensions } from 'nativescript-angular/router';
-
+import { Page } from "tns-core-modules/ui/page";
 @Component({
   selector: 'ns-auth',
   templateUrl: './auth.component.html',
@@ -10,8 +10,10 @@ import { RouterExtensions } from 'nativescript-angular/router';
 export class AuthComponent implements OnInit {
 
   constructor(
-    private router: RouterExtensions
+    private router: RouterExtensions,
+    private page: Page
   ) {
+    this.page.actionBarHidden = true;
   }
 
   ngOnInit(): void {

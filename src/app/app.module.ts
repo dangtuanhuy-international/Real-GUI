@@ -7,6 +7,7 @@ import { CurrentChallengeComponent } from './screens/current-challenge/current-c
 import { ChallengeEditComponent } from './screens/challenge-edit/challenge-edit.component';
 import { AuthComponent } from './auth/auth.component';
 import { DemoTodayComponent } from './screens/demo-today/demo-today.component';
+import { ActionBarComponent } from './shared/ui/action-bar/action-bar.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -27,7 +28,8 @@ import { DemoTodayComponent } from './screens/demo-today/demo-today.component';
         CurrentChallengeComponent,
         ChallengeEditComponent,
         AuthComponent,
-        DemoTodayComponent
+        DemoTodayComponent,
+        ActionBarComponent
     ],
     providers: [],
     schemas: [
