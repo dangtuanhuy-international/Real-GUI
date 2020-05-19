@@ -11,6 +11,10 @@ import { ActionBarComponent } from './shared/ui/action-bar/action-bar.component'
 import { CameraDetailComponent } from './screens/demo-today/camera-detail/camera-detail.component';
 import { registerElement } from "nativescript-angular";
 import { BarcodeScanner } from "nativescript-barcodescanner";
+import { ChallengeTabsComponent } from './screens/challenge-tabs/challenge-tabs.component';
+
+
+
 
 registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").BarcodeScannerView);
 
@@ -36,6 +40,7 @@ registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").B
         DemoTodayComponent,
         ActionBarComponent,
         CameraDetailComponent,
+        ChallengeTabsComponent,
     ],
     providers: [BarcodeScanner],
     schemas: [

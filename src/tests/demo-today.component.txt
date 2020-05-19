@@ -1,0 +1,31 @@
+import { DemoTodayComponent } from "~/app/screens/demo-today/demo-today.component";
+
+var reflect = require("reflect-metadata");
+var component = require("../app/screens/demo-today/demo-today.component");
+
+describe("Tests for demo-today.component.ts", function() {
+    var appComponent: DemoTodayComponent
+    beforeEach(function() {
+        appComponent = new component.DemoTodayComponent();
+    });
+
+    it('onScanResult', () => {
+        spyOn(console, 'log').and.returnValue(null);
+        const evt = {
+            text: '',
+            format: ''
+        }
+        appComponent.onScanResult(evt);
+        expect(console.log).toHaveBeenCalled();
+    });
+
+    it('', () => {
+        appComponent.barcodescanner = {
+            scan: jasmine.createSpy()
+        }
+
+        // create promise 
+
+        appComponent.barcodescanner.scan
+    })
+});
