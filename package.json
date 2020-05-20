@@ -24,6 +24,7 @@
     "loglevel": "^1.6.8",
     "nativescript-angular": "~8.21.0",
     "nativescript-barcodescanner": "^3.4.2",
+    "nativescript-ui-sidedrawer": "^8.0.1",
     "nativescript-unit-test-runner": "^0.7.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.4.0",

@@ -29,12 +29,10 @@ export class DemoTodayComponent implements OnInit {
 
   openNotification() {
     console.log("OPEN NOTIFICATION");
-
     this.barcodescanner.scan({
         formats: "QR_CODE, EAN_13",
         cancelLabel: "EXIT. Also, try the volume buttons!", // IOS only, default 'Close'
         cancelLabelBackgroundColor: "#333333", // IOS only, default '#000000' (black)
-
         showFlipCameraButton: true, // default fasle
         preferFrontCamera: false, // default false
         showTorchButton: true, // default false
@@ -43,7 +41,6 @@ export class DemoTodayComponent implements OnInit {
         closeCallback: () => {
             console.log("Scanner closed");
         }, // invoked when the scanner was closed (success or abort)
-
         openSettingIfPermissionWasPreviouslyDenied: true // On IOS you can send the user to the settings app if access was previously denied
     }).then((result) => {
         // Note that this Promis is never invoked when a 'continuousScanCallback' function is provided

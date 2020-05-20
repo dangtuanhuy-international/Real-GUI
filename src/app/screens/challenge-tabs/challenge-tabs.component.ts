@@ -11,7 +11,7 @@ export class ChallengeTabsComponent implements OnInit {
 
   constructor(private page: Page, private router: RouterExtensions, private active: ActivatedRoute) { this.page.actionBarHidden = true; }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.router.navigate(
       [
         {
@@ -22,6 +22,7 @@ export class ChallengeTabsComponent implements OnInit {
         relativeTo: this.active
       }
     );
+    // this.page.actionBarHidden = true;
   }
 
 }

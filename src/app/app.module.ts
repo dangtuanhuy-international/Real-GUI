@@ -12,8 +12,8 @@ import { CameraDetailComponent } from './screens/demo-today/camera-detail/camera
 import { registerElement } from "nativescript-angular";
 import { BarcodeScanner } from "nativescript-barcodescanner";
 import { ChallengeTabsComponent } from './screens/challenge-tabs/challenge-tabs.component';
-
-
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular/side-drawer-directives'
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 
 
 registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").BarcodeScannerView);
@@ -28,10 +28,7 @@ registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").B
     bootstrap: [
         AppComponent
     ],
-    imports: [
-        NativeScriptModule,
-        AppRoutingModule
-    ],
+    imports: [NativeScriptModule, NativeScriptFormsModule, NativeScriptUISideDrawerModule, AppRoutingModule],
     declarations: [
         AppComponent,
         CurrentChallengeComponent,

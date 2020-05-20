@@ -1,27 +1,58 @@
-import { Component } from "@angular/core";
+import {
+    Component,
+    OnInit,
+    OnDestroy,
+    ViewChild,
+    AfterViewInit,
+    ChangeDetectorRef
+} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { RadSideDrawerComponent } from 'nativescript-ui-sidedrawer/angular/side-drawer-directives';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+
+import { UIService } from './shared/ui.service';
 
 @Component({
-    selector: "ns-app",
-    templateUrl: "./app.component.html"
+    selector: 'ns-app',
+    moduleId: module.id,
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild(RadSideDrawerComponent, {static: false}) drawerComponent: RadSideDrawerComponent;
     activeChallenge = '';
-    public counter: number = 16;
+    private drawerSub: Subscription;
+    private drawer: RadSideDrawer;
+
+    constructor(
+        private uiService: UIService,
+        private changeDetectionRef: ChangeDetectorRef
+    ) { }
+
+    ngOnInit() {
+        this.drawerSub = this.uiService.drawerState.subscribe(() => {
+            if (this.drawer) {
+                this.drawer.toggleDrawerState();
+            }
+        });
+    }
+
+    ngAfterViewInit() {
+        this.drawer = this.drawerComponent.sideDrawer;
+        this.changeDetectionRef.detectChanges();
+    }
 
     onChallengeInput(challengeDescription: string) {
         this.activeChallenge = challengeDescription;
         console.log('onChallengeInput: ', challengeDescription);
     }
 
-    public get message(): string {
-        if (this.counter > 0) {
-            return this.counter + " taps left";
-        } else {
-            return "Hoorraaay! \nYou are ready to start building!";
-        }
+    onLogout() {
+        this.uiService.toggleDrawer();
     }
 
-    public onTap() {
-        this.counter--;
+    ngOnDestroy() {
+        if (this.drawerSub) {
+            this.drawerSub.unsubscribe();
+        }
     }
 }

@@ -14,7 +14,7 @@ export class AuthComponent implements OnInit {
     private router: RouterExtensions,
     private page: Page
   ) {
-    this.page.actionBarHidden = true;
+    // this.page.actionBarHidden = true;
   }
 
   ngOnInit(): void {
