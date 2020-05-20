@@ -2,4 +2,6 @@
 
 .buttonConfig {
     margin-top: 60;
+    position: absolute;
+    top: 50%;
 }

@@ -3,13 +3,11 @@
     <ActionItem icon="font://&#xf013;" class="fas" ios.position="right" (tap)="openSettings()"></ActionItem>
 </ActionBar> -->
 <ns-action-bar title="Today's Challenge" [showBackButton]="false"></ns-action-bar>
-<GridLayout row="auto, auto, auto" backgroundColor="white">
+<!-- <GridLayout row="auto, auto, auto" backgroundColor="white">
     <button row="1" text="close" (tap)="close()"></button>
     <button row="2" text="QR scanner" (tap)="openNotification()" class="btn btn-primary"></button>
-
-    <StackLayout>
-        <Label text="To Day"></Label>
-        <Button text="demo-today works!" class="btn btn-info" nsRouterLink="/current-challenge" pageTransition="slideLeft">
-        </Button>
-    </StackLayout>
-</GridLayout>
+</GridLayout> -->
+<StackLayout>
+    <Label text="Today!"></Label>
+    <Button text="today works!" class="btn btn-primary" nsRouterLink="/current-challenge" pageTransition="slideLeft"></Button>
+</StackLayout>

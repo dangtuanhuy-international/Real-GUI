@@ -10,10 +10,14 @@ import { ChallengeTabsComponent } from "../screens/challenge-tabs/challenge-tabs
 
 const routes: Routes = [
     { path: '', component: AuthComponent },
-    { path: 'today', component: DemoTodayComponent },
-    { path: 'current-challenge', component: CurrentChallengeComponent },
     { path: 'edit-challenge', component: ChallengeEditComponent },
-    { path: 'challenges', component: ChallengeTabsComponent }
+    {
+        path: 'challenges', component: ChallengeTabsComponent,
+        children: [
+            { path: 'today', component: DemoTodayComponent , outlet:'today'},
+            { path: 'current-challenge', component: CurrentChallengeComponent, outlet:'currentChallenge' },
+        ]
+    }
 ];
 
 @NgModule({
