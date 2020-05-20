@@ -16,7 +16,7 @@ export class CurrentChallengeComponent implements OnInit {
   ngOnInit(): void {
   }
   onEdit() {
-    this.router.navigate(['edit-challenge']);
+    this.router.navigate(['edit-challenge'], { transition: { name: 'slideLeft' } });
   }
-  
+
 }
