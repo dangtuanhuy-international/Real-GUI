@@ -3,6 +3,7 @@ import { isAndroid, Page } from 'tns-core-modules';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { UIService } from '../../ui.service';
 declare var android: any;
+
 @Component({
   selector: 'ns-action-bar',
   templateUrl: './action-bar.component.html',
@@ -13,9 +14,14 @@ export class ActionBarComponent implements OnInit {
   @Input() title: string;
   @Input() showBackButton = true;
   @Input() hasMenu = true;
-  constructor(private page: Page, private router: RouterExtensions, private uiService: UIService) {}
 
-  ngOnInit() {}
+  constructor(
+    private page: Page,
+    private router: RouterExtensions,
+    private uiService: UIService
+  ) { }
+
+  ngOnInit() { }
 
   get android() {
     return isAndroid;

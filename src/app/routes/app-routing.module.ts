@@ -12,22 +12,7 @@ const routes: Routes = [
     { path: '', component: AuthComponent },
     {
         path: 'challenges',
-        children: [
-            {
-                path: 'tabs',
-                component: ChallengeTabsComponent,
-                children: [
-                    { path: 'today', component: DemoTodayComponent, outlet: 'today' },
-                    {
-                        path: 'current-challenge',
-                        component: CurrentChallengeComponent,
-                        outlet: 'currentChallenge'
-                    }
-                ]
-            },
-            { path: ':mode', component: ChallengeEditComponent },
-            { path: '', redirectTo: '/challenges/tabs', pathMatch: 'full' }
-        ]
+        loadChildren: '~/app/screens/challenges.module#ChallengesModule'
     }
 ];
 

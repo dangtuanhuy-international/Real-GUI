@@ -1,14 +1,7 @@
-/* Add mobile styles for the component here.  */
-
 TextField {
     width: 66%;
-    margin-top: 50;
 }
 
 Button {
     width: 33%;
-}
-
-.changeTitle {
-    margin-top: 20;
 }

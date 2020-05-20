@@ -3,17 +3,14 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./routes/app-routing.module";
 import { AppComponent } from "./app.component";
-import { CurrentChallengeComponent } from './screens/current-challenge/current-challenge.component';
-import { ChallengeEditComponent } from './screens/challenge-edit/challenge-edit.component';
 import { AuthComponent } from './auth/auth.component';
-import { DemoTodayComponent } from './screens/demo-today/demo-today.component';
-import { ActionBarComponent } from './shared/ui/action-bar/action-bar.component';
 import { CameraDetailComponent } from './screens/demo-today/camera-detail/camera-detail.component';
 import { registerElement } from "nativescript-angular";
 import { BarcodeScanner } from "nativescript-barcodescanner";
-import { ChallengeTabsComponent } from './screens/challenge-tabs/challenge-tabs.component';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular/side-drawer-directives'
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { SharedModule } from "./shared/shared.module";
+import { DayModalComponent } from "./screens/day-modal/day-modal.component";
 
 
 registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").BarcodeScannerView);
@@ -25,25 +22,22 @@ registerElement("BarcodeScanner", () => require("nativescript-barcodescanner").B
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
-    bootstrap: [
-        AppComponent
+    bootstrap: [AppComponent],
+    imports: [
+        NativeScriptModule,
+        NativeScriptFormsModule,
+        NativeScriptUISideDrawerModule,
+        AppRoutingModule,
+        SharedModule
     ],
-    imports: [NativeScriptModule, NativeScriptFormsModule, NativeScriptUISideDrawerModule, AppRoutingModule],
     declarations: [
         AppComponent,
-        CurrentChallengeComponent,
-        ChallengeEditComponent,
         AuthComponent,
-        DemoTodayComponent,
-        ActionBarComponent,
-        CameraDetailComponent,
-        ChallengeTabsComponent,
+        DayModalComponent
     ],
-    providers: [BarcodeScanner],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ],
-    entryComponents: [DemoTodayComponent],
+    providers: [],
+    schemas: [NO_ERRORS_SCHEMA],
+    entryComponents: [DayModalComponent]
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app
