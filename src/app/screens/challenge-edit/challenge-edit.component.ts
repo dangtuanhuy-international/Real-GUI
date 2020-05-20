@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { PageRoute } from 'nativescript-angular/router';
 @Component({
   selector: 'ns-challenge-edit',
   templateUrl: './challenge-edit.component.html',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengeEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private pageRoute: PageRoute
+  ) { }
 
   ngOnInit(): void {
+    this.pageRoute.activatedRoute.subscribe(activatedRoute => {
+      activatedRoute.paramMap.subscribe(paramMap => {
+        console.log(paramMap.get('mode'));
+      });
+    });
   }
 
 }
