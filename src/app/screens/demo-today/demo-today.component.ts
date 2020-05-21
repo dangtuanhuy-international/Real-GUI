@@ -11,10 +11,11 @@ import { BarcodeScanner } from "nativescript-barcodescanner";
 export class DemoTodayComponent implements OnInit {
   barcodescanner: any;
 
-  constructor
-    (private routerExtensions: RouterExtensions) {
-        this.barcodescanner = new BarcodeScanner();
-      }
+  constructor(
+    private routerExtensions: RouterExtensions
+  ) {
+      this.barcodescanner = new BarcodeScanner();
+  }
 
   ngOnInit(): void {
   }
