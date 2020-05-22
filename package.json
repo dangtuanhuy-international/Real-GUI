@@ -24,10 +24,12 @@
     "loglevel": "^1.6.8",
     "nativescript-angular": "~8.21.0",
     "nativescript-barcodescanner": "^3.4.2",
+    "nativescript-theme-core": "1.0.6",
     "nativescript-ui-sidedrawer": "^8.0.1",
     "nativescript-unit-test-runner": "^0.7.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.4.0",
+    "scss": "^0.2.4",
     "tns-core-modules": "~6.5.0",
     "zone.js": "~0.9.1"
   },
@@ -43,6 +45,7 @@
     "karma-nativescript-launcher": "0.4.0",
     "karma-webpack": "3.0.5",
     "nativescript-dev-webpack": "~1.5.1",
+    "node-sass": "^4.14.1",
     "typescript": "~3.5.3"
   },
   "gitHead": "2250137db8c1e0bd0eb543e8e4563cb71480c00d",

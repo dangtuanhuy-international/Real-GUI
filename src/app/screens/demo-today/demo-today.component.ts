@@ -6,10 +6,11 @@ import { BarcodeScanner } from "nativescript-barcodescanner";
   selector: 'ns-demo-today',
   moduleId: module.id,
   templateUrl: './demo-today.component.html',
-  styleUrls: ['./demo-today.component.css']
+  styleUrls: ['./demo-today.component.scss']
 })
 export class DemoTodayComponent implements OnInit {
   barcodescanner: any;
+  isHighlighted = false;
 
   constructor
     (private routerExtensions: RouterExtensions) {
@@ -17,6 +18,10 @@ export class DemoTodayComponent implements OnInit {
       }
 
   ngOnInit(): void {
+  }
+
+  onDemo() {
+    this.isHighlighted = !this.isHighlighted;
   }
 
   goBack() {

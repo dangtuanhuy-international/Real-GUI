@@ -8,4 +8,8 @@
     <Button text="today works!" class="btn btn-primary" nsRouterLink="/current-challenge" pageTransition="slideLeft"></Button>
 </StackLayout> -->
 <ns-action-bar title="Today's Challenge" [showBackButton]="false"></ns-action-bar>
-<StackLayout> <Label text="Today!"></Label> </StackLayout>
+<FlexboxLayout>
+    <Button class="btn btn-success btn-rounded-lg" text="Competed"></Button>
+    <Button class="btn btn-fail btn-rounded-lg" text="Failed"></Button>
+    <Button class="btn btn-flat" text="Reset"></Button>
+</FlexboxLayout>

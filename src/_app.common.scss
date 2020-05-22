@@ -1,0 +1,10 @@
+// @import "~@nativescript/theme/css/core.css";
+// @import "~@nativescript/theme/css/default.css";
+
+@import "~nativescript-theme-core/scss/light";
+
+@import "./app/theme/colors";
+
+$btn-color: $primary;
+
+@import "~nativescript-theme-core/scss/index";

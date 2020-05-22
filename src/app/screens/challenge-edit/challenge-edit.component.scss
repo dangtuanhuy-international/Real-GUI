@@ -1,0 +1,23 @@
+@import "../../theme/_colors.scss";
+
+.form {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 80%;
+
+    .lable {
+        color: $primary;
+        font-weight: bold;
+    }
+    
+    .input {
+        width: 100%;
+        border-bottom-width: 2;
+        border-color: $primary;
+    }
+}
+
